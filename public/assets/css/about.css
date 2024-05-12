@@ -1,0 +1,132 @@
+@font-face {
+    font-family: londrinaSolid;
+    src: url(../font/Londrina_Solid/LondrinaSolid-Regular.ttf);
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #DED7C4;
+    scroll-behavior: smooth;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: londrinaSolid, Arial, Helvetica, sans-serif;
+}
+
+main,.container-about {
+    width: 100%;
+    height: fit-content;
+}
+
+header {
+    width: 100%;
+    padding-top: 20px;
+    position:absolute;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+}
+
+header > nav > ul {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+}
+header > nav > ul >li> a {
+    color: white;
+}
+
+.container-about-a {
+    display: flex;
+   justify-content: center;
+   background-image: url("../img/bg-about.png");
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   height: 80vh;
+}
+
+
+.container-about-a > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.container-about-a > div > p {
+    text-align: center;
+    width:80%;
+}
+footer {
+    width: 100%;
+    padding-top: 20px;
+    height: 10vh;
+}
+
+@media only screen and (max-width: 600px) {
+    footer {
+        width: 100%;
+        padding-top: 30px;
+    }
+
+   .container-about-a {
+    padding-top: 50px;
+   }
+
+}
+
+@media only screen and (min-width: 600px) {
+    .nasi-cartoon,.gorengan-cartoon, .esteh-cartoon {
+        display: none;
+        }
+
+        .paket-menu, .original-menu, .minuman-menu {
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .paket-menu > div, .original-menu > div, .minuman-menu > div {
+            width: 50%;
+        }
+
+        .logo-sego-resek-container > img {
+            width: 300px;
+        }
+
+        .container-about {
+            height: 25vh;
+        }
+
+        .container-about > div > button > a {
+            font-size: 20px;
+        }
+}
+
+@media only screen and (min-width: 768px) {
+        .nasi-cartoon,.gorengan-cartoon, .esteh-cartoon {
+        display: block;
+        }
+        .paket-menu, .original-menu, .minuman-menu {
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .paket-menu > div, .original-menu > div, .minuman-menu > div {
+            width: 50%;
+        }
+
+        .logo-sego-resek-container > img {
+            width: 500px;
+        }
+
+        .container-about {
+            height: 50vh;
+        }
+
+}
