@@ -69,6 +69,9 @@ class AdminsController extends Controller
 
         if($validator->fails()) {
             return back()->with('error','Masukkan Seluruh Field Secara lengkap');
+        } else if(Menu::where("nama_menu", "like", "%$".$request->nama_menu."%")) {
+            return back()->with('error','Nama menu sudah ada!');
+
         }
 
         if($request->hasFile("foto")) {
