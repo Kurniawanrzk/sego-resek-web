@@ -69,9 +69,15 @@ class AdminsController extends Controller
 
         if($validator->fails()) {
             return back()->with('error','Masukkan Seluruh Field Secara lengkap');
-        } else if(Menu::where("nama_menu", "like", "%$".$request->nama_menu."%")) {
-            return back()->with('error','Nama menu sudah ada!');
+        }
 
+        // Tambahkan menu jika tidak ada nama menu yang sama atau mirip
+        $existingMenus = Menu::pluck('nama_menu')->toArray();
+        foreach ($existingMenus as $existingMenu) {
+            similar_text($existingMenu, $request->nama_menu, $similarity);
+            if ($similarity > 90) {
+                return back()->with('error','Nama menu sudah ada atau mirip!');
+            }
         }
 
         if($request->hasFile("foto")) {
