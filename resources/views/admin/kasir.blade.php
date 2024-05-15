@@ -118,6 +118,8 @@ function kurangQty(btn) {
     ipt.value = parseInt(ipt.value) - 1; // Decrement the quantity
     if(ipt.value < 0) {
         ipt.value = 0;
+        document.getElementById("total-semua").innerText = 0
+
     }
     output.innerHTML = ipt.value;
 
@@ -129,11 +131,14 @@ function kurangQty(btn) {
             paragraph.innerText = `${nama_menu} x ${ipt.value} - Total: Rp. ${total}`; // Update the text content with the new quantity and total price
         }
     }
-    document.getElementById("total-semua").innerText = parseInt(document.getElementById("total-semua").innerText) - parseInt(harga_menu)
+    if(ipt.value != 0) {
+        document.getElementById("total-semua").innerText = parseInt(document.getElementById("total-semua").innerText) - parseInt(harga_menu)
     if(document.getElementById("total-semua").innerText ) {
         submitForm.disabled = true;
     printStruk.disabled = true;
     }
+    }
+
 }
 </script>
 @endsection

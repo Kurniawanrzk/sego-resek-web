@@ -2,11 +2,18 @@
 @section('content')
 <div class="container">
     <div class="row recent-menu">
+        @php
+            $data_komentar_dibalas = App\Models\AdminBalasKomen::selectRaw("COUNT(*) as jumlah_komentar_dibalas")->first();
+        @endphp
         <div class="col">
             <h4>Menu</h4>
+          <div class="container-action-menu">
+           <div>
             <a href="{{ Route("admin_add_menu") }}"><button class="btn btn-primary">Tambah Baru +</button></a>
             <a href="{{Route("get_all_menu")}}"><button class="btn btn-primary">Lihat Semua Menu</button></a>
-            <div class="mt-5" style="display: grid;grid-template-columns:auto auto auto;justify-content:space-between;gap:30px">
+           </div>
+          </div>
+            <div class="container-menu mt-5 mb-5">
                     @if(count($with['menu']))
                     @foreach ( $with['menu'] as $menu)
                         <div class="card shadow" style="width: 18rem;height:fit-content">
@@ -68,7 +75,7 @@
                 @if (count($with["komen"]))
                 @foreach ( $with["komen"] as $komen)
                 <div class="col shadow-sm border mt-2 p-2">
-                  <div class="d-flex align-items-center justify-content-between">
+                  <div class="container-komen">
                      <div class="col-10">
                         <p>{{$komen->komen}}</p>
                      </div>

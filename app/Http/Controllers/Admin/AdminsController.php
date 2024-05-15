@@ -75,7 +75,7 @@ class AdminsController extends Controller
         $existingMenus = Menu::pluck('nama_menu')->toArray();
         foreach ($existingMenus as $existingMenu) {
             similar_text($existingMenu, $request->nama_menu, $similarity);
-            if ($similarity > 90) {
+            if ($similarity > 70) {
                 return back()->with('error','Nama menu sudah ada atau mirip!');
             }
         }
@@ -161,14 +161,14 @@ class AdminsController extends Controller
         $newBalasanKomen = new Balasan;
         $res = $newBalasanKomen->create([
             "balasan" => $request->isi_komen,
-            "created_at" => date("Y-m-d H:i:s")
+            "waktu_balas" => date("Y-m-d H:i:s")
         ]);
         $newBalasan = new AdminBalasKomen;
         $newBalasan->create([
             "admin_usn" => auth()->guard("admin")->user()->username,
             "id_balasan_admin" => $res->id_balasan,
             "token_komentar_pengunjung" => $request->token_komentar_pengunjung,
-            "id_menu" => $request->id_menu ? $request->id_menu : NULL
+            "id_menu_pembahasan" => $request->id_menu ? $request->id_menu : NULL
         ]);
 
         if($newBalasan) {

@@ -1,0 +1,23 @@
+
+
+@media only screen and (max-width: 600px) {
+    .alert {
+        font-size: 10px;
+        width: fit-content;
+    }
+}
+@media only screen and (min-width: 600px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 992px) {
+    .alert {
+        font-size: 18px;
+        width: fit-content;
+    }
+}
+
