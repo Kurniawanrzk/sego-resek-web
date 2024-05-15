@@ -69,7 +69,7 @@
     </div>
     <div class="row recent-saran">
         <div class="col">
-            <h4>Komentar Dari Pengunjung Website</h4>
+            <h4>Komentar Dari Pengunjung Website{{request()->is('admin/dashboard')}}</h4>
             <a href="{{Route("get_all_komen")}}"><button class="btn btn-primary">Lihat Semua Komen</button></a>
             <div class="col">
                 @if (count($with["komen"]))

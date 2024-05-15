@@ -10,18 +10,9 @@
     <div class="row recent-saran">
         <div class="col">
 
-           @php
-            $data_komentar_dibalas = App\Models\AdminBalasKomen::selectRaw("COUNT(*) as jumlah_komentar_dibalas")->first();
-            @endphp
+
             <h4>Komentar Dari Pengunjung Website</h4>
-               <div class="d-flex gap-4">
-                <div class="alert alert-primary" style="height:fit-content">
-                    Komentar pengunjung yang telah dibalas : {{$data_komentar_dibalas->jumlah_komentar_dibalas}} komentar
-                </div>
-                <div class="alert alert-danger" style="height:fit-content">
-                    Komentar pengunjung yang telah dibalas : {{$data_komentar_dibalas->jumlah_komentar_dibalas}} komentar
-                </div>
-               </div>
+
             <div class="col">
               @foreach ( $with["komen"] as $komen)
               <div class="col shadow-sm border mt-2 p-2">
