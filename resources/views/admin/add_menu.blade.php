@@ -16,14 +16,18 @@
                     <input type="text" class="form-control" aria-label="nama_menu" name="nama_menu" value="@if($with['method'] == "post") {{old("nama_menu")}} @else{{$with["data_menu"]->nama_menu}} @endif" autofocus aria-describedby="addon-wrapping">
                 </div>
                 <br>
-                <div class="input-group flex-nowrap">
-                    <span class="input-group-text" id="addon-wrapping">File Foto</span>
-                    <input onchange="previewImage(this);" type="file" aria-label="foto" class="form-control" name="foto" autofocus aria-describedby="addon-wrapping">
-                    @if ($with['method'] == "post")
+                <div class="input-group flex-nowrap" style="width: fit-content">
+                    <span class="input-group-text" id="addon-wrapping">Nama menu</span>
+
+                    <input style="width: 100%" onchange="previewImage(this);" type="file" aria-label="foto" class="form-control" name="foto" autofocus aria-describedby="addon-wrapping">
+                    <br>
+                    <div class="d-block">
+                        @if ($with['method'] == "post")
                         <img id="img-preview" width="200px" src="{{old('foto')}}" />
                     @else
                         <img id="img-preview" src="{{url("/")."/uploads/menu_foto/".$with['data_menu']->file_foto}}" width="200px" />
                     @endif
+                    </div>
                 </div>
                 <script>
                     function previewImage(input) {

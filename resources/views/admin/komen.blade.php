@@ -16,7 +16,7 @@
             <div class="col">
               @foreach ( $with["komen"] as $komen)
               <div class="col shadow-sm border mt-2 p-2">
-                <div class="d-flex align-items-center justify-content-between">
+                <div class="container-komen">
                    <div class="col-10">
                       <p>{{$komen->komen}}</p>
                    </div>
@@ -75,7 +75,7 @@
              @endphp
                 @foreach ( $balasan as $balasan)
                 <div class="ms-4 col shadow-sm border mt-2 p-2" style="background-color: rgb(240, 240, 240)">
-                    <div class="d-flex align-items-center justify-content-between">
+                    <div class="container-komen">
                        <div class="col-10">
                           <p>{{$balasan->balasan}} </p>
                        </div>

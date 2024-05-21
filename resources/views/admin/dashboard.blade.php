@@ -80,7 +80,7 @@
                         <p>{{$komen->komen}}</p>
                      </div>
                      <div class="col-1">
-                        <p style="color:blue">{{ \Carbon\Carbon::parse($komen->created_at)->diffForHumans() }}</p>
+                        <p style="color:blue">{{ \Carbon\Carbon::parse($komen->waktu_komentar)->diffForHumans() }}</p>
                      </div>
                   </div>
                   <div class="col">

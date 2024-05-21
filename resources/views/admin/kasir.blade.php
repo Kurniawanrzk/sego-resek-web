@@ -15,8 +15,8 @@ $token = md5(token() . date("Ymd").time());
 @endphp
 <div class="container">
     <i style="color: grey" >Untuk Tampilan Yang Lebih Maksimal, gunakan device tablet/laptop</i>
-  <div style="display: flex;justify-content:space-between ;gap: 10px;">
-    <div class="rounded shadow borded" style="display: grid; grid-template-columns:auto auto auto ; gap:20px; height:100vh; overflow-y: auto;">
+  <div class="container-kasir">
+    <div class="rounded shadow borded container-menu-kasir" style="">
         @foreach ($with["data_menu"] as $item_menu)
             <div class="card shadow rounded">
                 <div class="card-body">

@@ -9,7 +9,7 @@
 
    <div>
     <div class="">
-           <div class="col-2">
+           <div style="width:fit-content">
             <form action="" id="form-tipe">
                 <select onchange="submit(this)" name="tipe" method="get"  class="form-control" id="">
                         <option value="">Pilih Tipe</option>
@@ -27,7 +27,7 @@
             }
 
            </script>
-            <div class="row mt-3 d-flex">
+            <div class="menu-container-item mt-3">
                 @foreach ( $with["menu"] as $makanan)
                 <div class="col-lg-4 mb-4">
                     <div class="card p-2" style="width: 18rem;">

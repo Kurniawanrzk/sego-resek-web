@@ -5,8 +5,8 @@
     <div class="row recent-menu">
         <div class="col">
             <h4 align="center">Semua Menu</h4>
-            <a href="{{ Route("admin_add_menu") }}"><button class="btn btn-primary">Tambah Baru +</button></a>
-            <div class="row mt-3 d-flex">
+            <a class="mb-3" href="{{ Route("admin_add_menu") }}"><button class="btn btn-primary">Tambah Baru +</button></a>
+            <div class="menu-container-item mt-4">
                 @foreach ( $with['data_menu'] as $menu)
                 <div class="col-lg-4 mb-4">
                     <div class="card" style="width: 18rem;">
